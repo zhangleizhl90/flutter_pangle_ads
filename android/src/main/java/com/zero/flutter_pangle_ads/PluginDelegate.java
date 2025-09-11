@@ -178,7 +178,7 @@ public class PluginDelegate implements MethodChannel.MethodCallHandler, EventCha
         // 构建配置
         TTAdConfig config = new TTAdConfig.Builder()
                 .appId(appId)
-                .useTextureView(useTextureView) //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView
+//                .useTextureView(useTextureView) //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView
                 .allowShowNotify(allowShowNotify) //是否允许sdk展示通知栏提示
                 .debug(BuildConfig.DEBUG) //测试阶段打开，可以通过日志排查问题，上线时去除该调用
                 .supportMultiProcess(supportMultiProcess)//是否支持多进程
