@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 
 import com.bytedance.sdk.openadsdk.TTAdConfig;
 import com.bytedance.sdk.openadsdk.TTAdSdk;
+import com.bytedance.sdk.openadsdk.TTCustomController;
 import com.zero.flutter_pangle_ads.load.FeedAdLoad;
 import com.zero.flutter_pangle_ads.load.FeedAdManager;
 import com.zero.flutter_pangle_ads.page.AdSplashActivity;
@@ -183,6 +184,12 @@ public class PluginDelegate implements MethodChannel.MethodCallHandler, EventCha
                 .debug(BuildConfig.DEBUG) //测试阶段打开，可以通过日志排查问题，上线时去除该调用
                 .supportMultiProcess(supportMultiProcess)//是否支持多进程
                 .directDownloadNetworkType(directDownloadNetworkTypeList)// 直接下载的网络方式
+                .customController(new TTCustomController() {
+                    @Override
+                    public boolean alist() {
+                        return false;
+                    }
+                })
                 .build();
         // 初始化 SDK
         TTAdSdk.init(activity.getApplicationContext(), config);
